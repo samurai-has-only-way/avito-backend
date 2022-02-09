@@ -4,10 +4,15 @@ module.exports = {
     project: 'tsconfig.json',
     sourceType: 'module',
   },
-  plugins: ['@typescript-eslint/eslint-plugin'],
+  plugins: [
+      '@typescript-eslint/eslint-plugin',
+      'import-newlines',
+      'nestjs'
+  ],
   extends: [
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
+    'plugin:nestjs/recommended',
   ],
   root: true,
   env: {
@@ -44,12 +49,13 @@ module.exports = {
     'keyword-spacing': 'error',
     'space-unary-ops': 'error',
     'no-duplicate-imports': 'error',
-    'max-len': [
-      'warn',
-      {
-        'code': 80,
-        'tabWidth': 2
-      }
-    ],
+    // 'max-len': [
+    //   'error',
+    //   {
+    //     'code': 80,
+    //     'tabWidth': 2
+    //   }
+    // ],
+    'linebreak-style': ['error', 'unix'],
   },
 };
