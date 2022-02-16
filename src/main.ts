@@ -2,14 +2,10 @@ import { NestFactory } from '@nestjs/core';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import helmet from 'helmet';
 import { NestExpressApplication } from '@nestjs/platform-express';
-import * as dotenv from 'dotenv';
-import { resolve } from 'path';
 
 import { AppModule } from './app.module';
 import { AppConfig } from './modules/configuration/configuration.service';
 import { ValidationPipe } from '@nestjs/common';
-
-dotenv.config({ path: resolve(__dirname, '../.env') });
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
