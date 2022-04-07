@@ -9,6 +9,7 @@ import { TypeOrmDefaultConfigService } from './modules/database/database.provide
 import configuration from './modules/configuration';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { HealthController } from './modules/health/health.controller';
 
 @Module({
   imports: [
@@ -26,7 +27,7 @@ import { AppService } from './app.service';
     NotificationsModule,
     TerminusModule,
   ],
-  controllers: [AppController],
+  controllers: [AppController, HealthController],
   providers: [AppService],
 })
 export class AppModule {}

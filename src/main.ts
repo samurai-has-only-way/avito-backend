@@ -31,4 +31,4 @@ async function bootstrap() {
   await app.listen(PORT, () => console.log('Server listening on port: ', PORT));
 }
 
-bootstrap();
+Promise.resolve().then(bootstrap);
